@@ -1,0 +1,257 @@
+/* ========== Google Font ========== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+:root {
+    /* Google Font */
+    --font: "Poppins", sans-serif;
+
+    /* Index */
+    --medium-z: 1;
+    --blod-z: 2;
+    --blod-ultra-z: 10;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font);
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font);
+    background-color: rgb(41, 41, 41);
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h5,
+p {
+    color: #fff;
+}
+
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+
+    position: relative;
+}
+
+/* ==========  Navigation ========== */
+.navb {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: var(--blod-z);
+    padding: 1rem 7rem;
+    background-color: #333;
+
+}
+
+.navb .logo {
+    position: relative;
+    display: flex;
+    font-size: 2em;
+}
+
+.navb .navb-list {
+    display: inline-block;
+    flex: 1;
+    margin-left: 2rem;
+}
+
+.navb .navb-items {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+.navb .navb-items .nav-link {
+    display: block;
+    font-size: 18px;
+    color: white;
+
+    transition: color .5s;
+}
+
+.navb .navb-items .nav-link:hover {
+    color: rgb(97, 120, 255);
+}
+
+.navb .navb-items .nav-link.active__nav-link::after {
+    content: "";
+    display: block;
+    margin-top: 3px;
+    width: 100%;
+    height: 1.5px;
+    border-radius: 12px;
+    background-color: rgb(97, 120, 255);
+}
+
+.navb .login__btn {
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 10px 50px;
+    border-radius: 50px;
+    background-color: rgb(97, 120, 255);
+}
+
+/* ========== Navigation End ========== */
+
+
+/* ========== Content ========== */
+.content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 1170px;
+}
+
+.content .left {
+    display: block;
+    margin-top: 34%;
+    margin-left: 8%;
+}
+
+.content .left h1 {
+    font-size: 3em;
+    margin-bottom: 12px;
+}
+
+.content .left h1>span {
+    color: rgb(97, 120, 255);
+}
+
+.content .left .content__btn {
+    position: absolute;
+    display: block;
+    margin-top: 23px;
+    padding: 10px 50px;
+    border-radius: 50px;
+    color: white;
+    background-color: rgb(97, 120, 255);
+}
+
+.content .right {
+    display: block;
+
+}
+
+.images {
+    position: absolute;
+    display: block;
+    right: .5rem;
+}
+
+.images img {
+    width: 87%;
+}
+
+/* ========== Content End ========== */
+
+@media screen and (max-width: 1190px) {
+
+    .navb .navb-items,
+    .navb .login__btn {
+        display: none;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .humbger {
+        position: absolute;
+        display: block;
+        width: 35px;
+        height: 35px;
+        right: 1.5rem;
+        top: 1.3rem;
+        z-index: var(--blod-z);
+
+        border: none;
+        cursor: pointer;
+    }
+
+    .humbger .bar,
+    .humbger::before,
+    .humbger::after {
+        content: "";
+        display: block;
+        width: 85%;
+        height: 4px;
+        margin: 8px;
+        border-radius: 50px;
+        background-color: #fff;
+        transition: .5s;
+    }
+    .humbger.activeH::before {
+        transform: rotate(-45deg) translate(-7px, 9px);
+    }
+    .humbger.activeH::after {
+        transform: rotate(45deg) translate(-8px, -10px);
+    }
+    .humbger.activeH .bar {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    .humbger__menu {
+        position: absolute;
+        display: block;
+        width: 250px;
+        height: 100vh;
+        background-color: rgb(31, 31, 31, .76);
+        right: -100%;
+        top: 0;
+    }
+
+    .humbger__menu .humb__list {
+        display: block;
+        margin-top: 33%;
+        margin-left: 8%;
+    }
+
+    .humb__items {
+        display: block;
+        margin-bottom: 1.3em;
+    }
+
+    .humb__items a {
+        display: block;
+        color: white;
+        
+    }
+    .humbger__menu.activeH {
+        right: 0%;
+    }
+}
