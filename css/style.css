@@ -179,6 +179,10 @@ p {
 
 /* ========== Content End ========== */
 
+.humbger__menu {
+    display: none;
+}
+
 @media screen and (max-width: 1190px) {
 
     .navb .navb-items,
