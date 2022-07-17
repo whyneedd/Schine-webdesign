@@ -190,6 +190,13 @@ p {
         display: none;
     }
 
+    .content .left h1 {
+        font-size: 1.5em;
+    }
+
+    .content .left p {
+        width: 75%;
+    }
     .content {
         grid-template-columns: 1fr;
     }
