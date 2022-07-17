@@ -244,6 +244,7 @@ p {
         background-color: rgb(31, 31, 31, .76);
         right: -100%;
         top: 0;
+        transition: .5s;
     }
 
     .humbger__menu .humb__list {
